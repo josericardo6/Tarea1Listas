@@ -92,21 +92,31 @@ public class ListaSimple {
         
         Nodo nuevo = new Nodo(dato);
         
-        if(cabeza == null){
+        try{
             
-            cabeza = nuevo;
-            ultimo = nuevo;
+            if(cabeza == null){
+
+                cabeza = nuevo;
+                ultimo = nuevo;
+
+            }else{
+
+                ultimo.setSig(nuevo);
+                ultimo = nuevo;
+
+            }
+
+            agregarEspaciosLista();
+
+            return true;
+        
+        }catch(Exception e){
             
-        }else{
-            
-            ultimo.setSig(nuevo);
-            ultimo = nuevo;
+            System.out.println(e.getMessage());
+            return false;
             
         }
         
-        agregarEspaciosLista();
-        
-        return true;
     }
     
     /**
@@ -162,13 +172,22 @@ public class ListaSimple {
         String resultado;
         
         Nodo aux = cabeza;
-        Nodo menor = cabeza;
+        String temp = "";
+        String temp2 = "";
         
-        for(int i = 0; i < nodoGetCount()-1; i++){
+        for(int i = 0; i < nodoGetCount() - 1; i++){
             
-            if(aux.getDato().compareTo(aux.getSig().getDato()) == 1){
-                
-                menor.setDato(aux.getDato());
+            for(int j = 0; j < nodoGetCount() - 1; j++){
+                     
+                if(temp.compareTo(temp2) < 0){
+                    
+                    temp = aux.getDato();
+                    temp2 = aux.getSig().getDato(); 
+                    
+                    aux.getSig().setDato(temp);
+                    cabeza.setDato(temp2);
+                    
+                }
                 
             }
             
@@ -177,7 +196,8 @@ public class ListaSimple {
         }
         
         
-        resultado = "Menor: [" + menor.getDato() + "], Segundo menor: [" + cabeza.getSig().getDato()+"]";
+        
+        resultado = "Menor: [" + cabeza.getDato() + "], Segundo menor: [" + cabeza.getSig().getDato()+"]";
         
         return resultado;
     }
@@ -193,10 +213,10 @@ public class ListaSimple {
         
         Nodo aux = cabeza;
         Nodo temp;
-
+        
         while (aux.getSig() != null) {
 
-         temp = aux.getSig();  //
+         temp = aux.getSig();  
 
          aux.setSig(temp.getSig());
 
