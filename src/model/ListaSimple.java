@@ -170,34 +170,51 @@ public class ListaSimple {
     public String dosMenores(){
         
         String resultado;
-        
+
         Nodo aux = cabeza;
-        String temp = "";
-        String temp2 = "";
+        String temp = " ";
+        String menor1 = " ";
+        String menor2 = " ";
         
-        for(int i = 0; i < nodoGetCount() - 1; i++){
+        if(cabeza == null){
             
-            for(int j = 0; j < nodoGetCount() - 1; j++){
-                     
-                if(temp.compareTo(temp2) < 0){
-                    
-                    temp = aux.getDato();
-                    temp2 = aux.getSig().getDato(); 
-                    
-                    aux.getSig().setDato(temp);
-                    cabeza.setDato(temp2);
-                    
-                }
-                
+            resultado = "La lista esta vacia";
+            return resultado;
+            
+        }else{
+            
+        
+            for(int i = 0; i < nodoGetCount(); i++){ //nodoGetCount da el numero de nodos
+
+                System.out.println("Lista: "+aux.getDato());
+
+                if(" ".equals(menor1) || " ".equals(menor2)){  // si estan vacios los inicializa en aux
+
+                    menor1 = aux.getDato();
+                    menor2 = aux.getDato();
+
+                }else if(menor1.compareTo(aux.getDato()) > 0 ){ // si no estan vacios, compara menor1 con aux(aux se va corriendo) 
+
+                    menor1 = aux.getDato(); // si se da la condicion, se guarda el menor
+                    System.out.println("Menor1: "+menor1);
+
+                    if(menor2.compareTo(menor1) > 0 ){                  //condicion para el segundo menor
+                                                                        //menor2 sea mayor a menor1 y menor2 sea menor a aux                                                 
+                        menor2 = temp;
+                        System.out.println("Menor2: "+menor2);
+
+                    }
+
+                } 
+
+                temp = aux.getDato();
+                aux = aux.getSig();
+
             }
-            
-            aux = aux.getSig();
-            
-        }
         
+        }    
         
-        
-        resultado = "Menor: [" + cabeza.getDato() + "], Segundo menor: [" + cabeza.getSig().getDato()+"]";
+        resultado = "Menor: [" + menor1 + "], Segundo menor: ["+menor2+"]";
         
         return resultado;
     }
@@ -214,18 +231,24 @@ public class ListaSimple {
         Nodo aux = cabeza;
         Nodo temp;
         
+        if(cabeza == null){
+            
+            return false;
+        
+        } else{
+        
         while (aux.getSig() != null) {
 
-         temp = aux.getSig();  
+            temp = aux.getSig();  
 
-         aux.setSig(temp.getSig());
+            aux.setSig(temp.getSig());
 
-         temp.setSig(cabeza);
+            temp.setSig(cabeza);
 
-         cabeza = temp;
+            cabeza = temp;
 
+           }
         }
-        
         return true;
     }
     

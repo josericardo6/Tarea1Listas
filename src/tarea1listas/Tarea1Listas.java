@@ -8,7 +8,7 @@ import model.ListaSimple;
 /**
  *
  * @author Jose Ricardo Rodriguez Moya
- * @version 0.2
+ * @version 0.3
  * 
  * Descripcion: Tarea #1 del curso Programacion 3.
  * El proyecto implementa los 3 metodos requeridos por la tarea, los cuales son:
@@ -30,25 +30,25 @@ public class Tarea1Listas {
         
         //PRUEBA EJERCICIO 1
         
-        ls.add("1");
-        ls.add("2");
-        ls.add("3");
-        ls.add("4");
-        ls.add("5");
-        ls.add("6");
-        ls.add("7");
-        ls.add("8");
-        ls.add("9");
+//        ls.add("1");
+//        ls.add("2");
+//        ls.add("3"); 
+//        ls.add("4");
+//        ls.add("5");
+//        ls.add("6");
+//        ls.add("7");
+//        ls.add("8");
+//        ls.add("9");
 
-        ls.add("4");
-        ls.add("1");
-        ls.add("3");
-        ls.add("9");
+//        ls.add("2");
+//        ls.add("1");
+//        ls.add("4");
+//        ls.add("9");
 
-//        ls.add("Hola");
-//        ls.add("Mundo");
-//        ls.add("Soy");
-//        ls.add("Troll");
+        ls.add("Hola");
+        ls.add("Mundo");
+        ls.add("Soy");
+        ls.add("Troll");
         
         
         System.out.println("----PRIMER EJERCICIO\n");
@@ -58,18 +58,23 @@ public class Tarea1Listas {
         System.out.println("Numero de Nodos: "+ls.nodoGetCount());
         System.out.println("Size Lista: "+ls.getSize()+"\n");
         
+        
         //PRUEBA EJERCICIO 2
         
         System.out.println("----SEGUNDO EJERCICIO\n");
         
         System.out.println(ls.dosMenores()+"\n");
+          
         
         //PRUEBA EJERCICIO 3
         
         System.out.println("----TERCER EJERCICIO\n");
         
-        ls.invertirLista();
-        System.out.println("Lista invertida: "+ls.toString()+"\n");
+        if(ls.invertirLista()){
+            System.out.println("Lista invertida: "+ls.toString()+"\n");
+        }else{
+            System.out.println("La lista esta vacia");
+        }
         
     }
     
