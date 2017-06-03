@@ -40,10 +40,10 @@ public class Tarea1Listas {
 //        ls.add("8");
 //        ls.add("9");
 
-//        ls.add("2");
-//        ls.add("1");
-//        ls.add("4");
-//        ls.add("9");
+        ls.add("2");
+        ls.add("1");
+        ls.add("4");
+        ls.add("9");
 
         ls.add("Hola");
         ls.add("Mundo");

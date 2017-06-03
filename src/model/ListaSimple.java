@@ -186,7 +186,7 @@ public class ListaSimple {
         
             for(int i = 0; i < nodoGetCount(); i++){ //nodoGetCount da el numero de nodos
 
-                System.out.println("Lista: "+aux.getDato());
+//                System.out.println("Lista: "+aux.getDato());
 
                 if(" ".equals(menor1) || " ".equals(menor2)){  // si estan vacios los inicializa en aux
 
@@ -196,12 +196,12 @@ public class ListaSimple {
                 }else if(menor1.compareTo(aux.getDato()) > 0 ){ // si no estan vacios, compara menor1 con aux(aux se va corriendo) 
 
                     menor1 = aux.getDato(); // si se da la condicion, se guarda el menor
-                    System.out.println("Menor1: "+menor1);
+//                    System.out.println("Menor1: "+menor1);
 
                     if(menor2.compareTo(menor1) > 0 ){                  //condicion para el segundo menor
                                                                         //menor2 sea mayor a menor1 y menor2 sea menor a aux                                                 
                         menor2 = temp;
-                        System.out.println("Menor2: "+menor2);
+//                        System.out.println("Menor2: "+menor2);
 
                     }
 
