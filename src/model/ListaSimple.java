@@ -83,7 +83,8 @@ public class ListaSimple {
     /**
      * <h1>Add</h1>
      * <p>
-     * Metodo que agrega un numero al final de la lista.</p>
+     * Metodo que agrega un numero al final de la lista. La lista solo
+     * acepta 30 nodos</p>
      *
      * @param dato el numero a guardar
      * @return boolean: el resultado de la operacion
@@ -94,22 +95,38 @@ public class ListaSimple {
         
         try{
             
-            if(cabeza == null){
+            if(nodoGetCount() < 30){
+            
+                if(cabeza == null){
 
-                cabeza = nuevo;
-                ultimo = nuevo;
+                    cabeza = nuevo;
+                    ultimo = nuevo;
 
+                }else{
+
+                    ultimo.setSig(nuevo);
+                    ultimo = nuevo;
+
+                }
+
+                agregarEspaciosLista();
+
+                if(nodoGetCount() == 29){
+                    size = size - 10;
+                }
+                
+                return true;
+                
             }else{
-
-                ultimo.setSig(nuevo);
-                ultimo = nuevo;
-
+                
+                System.err.println("No se pueden agregar mas nodos, capacidad maxima 30");
+                
+                
+                
+                return false;
+                
             }
-
-            agregarEspaciosLista();
-
-            return true;
-        
+            
         }catch(Exception e){
             
             System.out.println(e.getMessage());
@@ -161,70 +178,11 @@ public class ListaSimple {
     }
     
     /**
-     * <h1>dosMenores</h1>
-     * <p>
-     * Metodo que regresa un string con los dos valores menores de la lista.</p>
-     *
-     * @return String: dos valores menores de la lista
-     */
-    public String dosMenores(){
-        
-        String resultado;
-
-        Nodo aux = cabeza;
-        String temp = " ";
-        String menor1 = " ";
-        String menor2 = " ";
-        
-        if(cabeza == null){
-            
-            resultado = "La lista esta vacia";
-            return resultado;
-            
-        }else{
-            
-        
-            for(int i = 0; i < nodoGetCount(); i++){ //nodoGetCount da el numero de nodos
-
-//                System.out.println("Lista: "+aux.getDato());
-
-                if(" ".equals(menor1) || " ".equals(menor2)){  // si estan vacios los inicializa en aux
-
-                    menor1 = aux.getDato();
-                    menor2 = aux.getDato();
-
-                }else if(menor1.compareTo(aux.getDato()) > 0 ){ // si no estan vacios, compara menor1 con aux(aux se va corriendo) 
-
-                    menor1 = aux.getDato(); // si se da la condicion, se guarda el menor
-//                    System.out.println("Menor1: "+menor1);
-
-                    if(menor2.compareTo(menor1) > 0 ){                  //condicion para el segundo menor
-                                                                        //menor2 sea mayor a menor1 y menor2 sea menor a aux                                                 
-                        menor2 = temp;
-//                        System.out.println("Menor2: "+menor2);
-
-                    }
-
-                } 
-
-                temp = aux.getDato();
-                aux = aux.getSig();
-
-            }
-        
-        }    
-        
-        resultado = "Menor: [" + menor1 + "], Segundo menor: ["+menor2+"]";
-        
-        return resultado;
-    }
-    
-    /**
      * <h1>invertirLista</h1>
      * <p>
      * Metodo que invierte todos los valores de la lista(Posicion).</p>
      *
-     * @return boolean: el resultado de la operacion
+     * @return boolean: el resultado de la operación
      */
     public boolean invertirLista(){
         
@@ -251,5 +209,60 @@ public class ListaSimple {
         }
         return true;
     }
+    
+    
+    //IGNORAR A PARTIR DE AQUI
+    
+//    public String dosMenores(){
+//        
+//        String resultado;
+//
+//        Nodo aux = cabeza;
+//        String temp = " ";
+//        String menor1 = " ";
+//        String menor2 = " ";
+//        
+//        if(cabeza == null){
+//            
+//            resultado = "La lista esta vacia";
+//            return resultado;
+//            
+//        }else{
+//            
+//        
+//            for(int i = 0; i < nodoGetCount(); i++){ //nodoGetCount da el numero de nodos
+//
+////                System.out.println("Lista: "+aux.getDato());
+//
+//                if(" ".equals(menor1) || " ".equals(menor2)){  // si estan vacios los inicializa en aux
+//
+//                    menor1 = aux.getDato();
+//                    menor2 = aux.getDato();
+//
+//                }else if(menor1.compareTo(aux.getDato()) > 0 ){ // si no estan vacios, compara menor1 con aux(aux se va corriendo) 
+//
+//                    menor1 = aux.getDato(); // si se da la condicion, se guarda el menor
+////                    System.out.println("Menor1: "+menor1);
+//
+//                    if(menor2.compareTo(menor1) > 0 ){                  //condicion para el segundo menor
+//                                                                        //menor2 sea mayor a menor1 y menor2 sea menor a aux                                                 
+//                        menor2 = temp;
+////                        System.out.println("Menor2: "+menor2);
+//
+//                    }
+//
+//                } 
+//
+//                temp = aux.getDato();
+//                aux = aux.getSig();
+//
+//            }
+//        
+//        }    
+//        
+//        resultado = "Menor: [" + menor1 + "], Segundo menor: ["+menor2+"]";
+//        
+//        return resultado;
+//    }
     
 }

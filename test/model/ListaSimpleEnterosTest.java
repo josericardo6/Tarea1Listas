@@ -16,9 +16,9 @@ import static org.junit.Assert.*;
  *
  * @author Ricardo Rodriguez
  */
-public class ListaSimpleTest {
+public class ListaSimpleEnterosTest {
     
-    public ListaSimpleTest() {
+    public ListaSimpleEnterosTest() {
     }
     
     @BeforeClass
@@ -38,67 +38,67 @@ public class ListaSimpleTest {
     }
 
     /**
-     * Test of getCabeza method, of class ListaSimple.
+     * Test of getCabeza method, of class ListaSimpleEnteros.
      */
     @Test
     public void testGetCabeza() {
         System.out.println("getCabeza");
-        ListaSimple instance = new ListaSimple();
-        Nodo expResult = null;
-        Nodo result = instance.getCabeza();
+        ListaSimpleEnteros instance = new ListaSimpleEnteros();
+        NodoEntero expResult = null;
+        NodoEntero result = instance.getCabeza();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
     }
 
     /**
-     * Test of setCabeza method, of class ListaSimple.
+     * Test of setCabeza method, of class ListaSimpleEnteros.
      */
     @Test
     public void testSetCabeza() {
         System.out.println("setCabeza");
-        Nodo cabeza = null;
-        ListaSimple instance = new ListaSimple();
+        NodoEntero cabeza = null;
+        ListaSimpleEnteros instance = new ListaSimpleEnteros();
         instance.setCabeza(cabeza);
         // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
     }
 
     /**
-     * Test of getUltimo method, of class ListaSimple.
+     * Test of getUltimo method, of class ListaSimpleEnteros.
      */
     @Test
     public void testGetUltimo() {
         System.out.println("getUltimo");
-        ListaSimple instance = new ListaSimple();
-        Nodo expResult = null;
-        Nodo result = instance.getUltimo();
+        ListaSimpleEnteros instance = new ListaSimpleEnteros();
+        NodoEntero expResult = null;
+        NodoEntero result = instance.getUltimo();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
     }
 
     /**
-     * Test of setUltimo method, of class ListaSimple.
+     * Test of setUltimo method, of class ListaSimpleEnteros.
      */
     @Test
     public void testSetUltimo() {
         System.out.println("setUltimo");
-        Nodo ultimo = null;
-        ListaSimple instance = new ListaSimple();
+        NodoEntero ultimo = null;
+        ListaSimpleEnteros instance = new ListaSimpleEnteros();
         instance.setUltimo(ultimo);
         // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
     }
 
     /**
-     * Test of getSize method, of class ListaSimple.
+     * Test of getSize method, of class ListaSimpleEnteros.
      */
     @Test
     public void testGetSize() {
         System.out.println("getSize");
-        ListaSimple instance = new ListaSimple();
-        int expResult = 10;
+        ListaSimpleEnteros instance = new ListaSimpleEnteros();
+        int expResult = 0;
         int result = instance.getSize();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -106,25 +106,25 @@ public class ListaSimpleTest {
     }
 
     /**
-     * Test of setSize method, of class ListaSimple.
+     * Test of setSize method, of class ListaSimpleEnteros.
      */
     @Test
     public void testSetSize() {
         System.out.println("setSize");
         int size = 0;
-        ListaSimple instance = new ListaSimple();
+        ListaSimpleEnteros instance = new ListaSimpleEnteros();
         instance.setSize(size);
         // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
     }
 
     /**
-     * Test of toString method, of class ListaSimple.
+     * Test of toString method, of class ListaSimpleEnteros.
      */
     @Test
     public void testToString() {
         System.out.println("toString");
-        ListaSimple instance = new ListaSimple();
+        ListaSimpleEnteros instance = new ListaSimpleEnteros();
         String expResult = "";
         String result = instance.toString();
         assertEquals(expResult, result);
@@ -133,13 +133,13 @@ public class ListaSimpleTest {
     }
 
     /**
-     * Test of add method, of class ListaSimple.
+     * Test of add method, of class ListaSimpleEnteros.
      */
     @Test
     public void testAdd() {
         System.out.println("add");
-        String dato = "";
-        ListaSimple instance = new ListaSimple();
+        int dato = -1;
+        ListaSimpleEnteros instance = new ListaSimpleEnteros();
         boolean expResult = true;
         boolean result = instance.add(dato);
         assertEquals(expResult, result);
@@ -148,42 +148,14 @@ public class ListaSimpleTest {
     }
 
     /**
-     * Test of agregarEspaciosLista method, of class ListaSimple.
+     * Test of eliminarRepetidos method, of class ListaSimpleEnteros.
      */
     @Test
-    public void testAgregarEspaciosLista() {
-        System.out.println("agregarEspaciosLista");
-        ListaSimple instance = new ListaSimple();
+    public void testEliminarRepetidos() {
+        System.out.println("eliminarRepetidos");
+        ListaSimpleEnteros instance = new ListaSimpleEnteros();
         boolean expResult = true;
-        boolean result = instance.agregarEspaciosLista();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of nodoGetCount method, of class ListaSimple.
-     */
-    @Test
-    public void testNodoGetCount() {
-        System.out.println("nodoGetCount");
-        ListaSimple instance = new ListaSimple();
-        int expResult = 0;
-        int result = instance.nodoGetCount();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of invertirLista method, of class ListaSimple.
-     */
-    @Test
-    public void testInvertirLista() {
-        System.out.println("invertirLista");
-        ListaSimple instance = new ListaSimple();
-        boolean expResult = false;
-        boolean result = instance.invertirLista();
+        boolean result = instance.eliminarRepetidos();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
